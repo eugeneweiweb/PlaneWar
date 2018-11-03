@@ -1,4 +1,5 @@
-const QFTools=requrire("../libs/tools.js");
+const QFTools=require("../libs/tools.js");
+const myPlane=require("./myPlane.js");
 
 function Bullet(){
 
@@ -8,9 +9,10 @@ Bullet.prototype={
 	constructor:Bullet,
 	init:function(plane){
 		this.plane=plane;
+		//console.log(this.plane);
 		this.ele=QFTools.createDiv("bullet");
-		var _top=this.plane.offsetTop-this.ele.offsetHeight;
-		var _left=this.plane.offsetLeft+this.plane.offsetWidth/2-this.ele.offsetWidth/2;
+		var _top=this.plane.ele.offsetTop-this.ele.offsetHeight;
+		var _left=this.plane.ele.offsetLeft+this.plane.ele.offsetWidth/2-this.ele.offsetWidth/2;
 		this.ele.style.top=_top+"px";
 		this.ele.style.left=_left+"px";
 		this.move();
@@ -19,6 +21,7 @@ Bullet.prototype={
 
 	move:function(){
 		this.timer=setInterval(function(){
+			//console.log(this.plane);
 			this.ele.style.top=this.ele.offsetTop-8+"px";
 			if(this.ele.offsetTop<-40){
 				this.die();		

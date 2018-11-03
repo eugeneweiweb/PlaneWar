@@ -58,3 +58,5 @@ Engine.prototype.startGame=function(){
 		}
 	},500);
 }
+
+module.exports=Engine;

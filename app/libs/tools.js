@@ -336,4 +336,4 @@ var QFTools = {
 	}
 }
 
-module.export=QFTools;
+module.exports=QFTools;
